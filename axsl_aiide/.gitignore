@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+agent/.venv/
+agent/.env
+
+# Node / 扩展
+extension/node_modules/
+extension/dist/
+extension/*.vsix
+
+# 数据
+storage/*.db
+storage/*.db-journal
+
+# Agent 工作区(默认不入库,视需要而定)
+workspace/*
+!workspace/.gitkeep
+
+# IDE
+.vscode/
+.idea/

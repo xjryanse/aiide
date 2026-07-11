@@ -1,0 +1,75 @@
+{
+  "active_id": "ws_default",
+  "workspaces": [
+    {
+      "id": "ws_default",
+      "name": "默认工作区",
+      "roots": [
+        {
+          "name": "workspace",
+          "path": "D:\\phpstudy_pro\\WWW\\axsl_aiide",
+          "default_cwd": true
+        }
+      ]
+    },
+    {
+      "id": "ws_mrc63ogb",
+      "name": "新工作区",
+      "roots": [
+        {
+          "name": "service_zzcr",
+          "path": "D:\\phpstudy_pro\\WWW\\service_zzcr",
+          "default_cwd": true
+        }
+      ]
+    },
+    {
+      "id": "ws_mrc7z176",
+      "name": "新工作区",
+      "roots": [
+        {
+          "name": "service_data",
+          "path": "D:\\phpstudy_pro\\WWW\\service_data",
+          "default_cwd": true
+        }
+      ]
+    },
+    {
+      "id": "ws_mreyymc7",
+      "name": "新工作区",
+      "roots": [
+        {
+          "name": "auto_test",
+          "path": "D:\\phpstudy_pro\\WWW\\auto_test",
+          "default_cwd": true
+        }
+      ]
+    },
+    {
+      "id": "ws_mrezrcxv",
+      "name": "新工作区",
+      "roots": [
+        {
+          "name": "service_table",
+          "path": "D:\\phpstudy_pro\\WWW\\service_table",
+          "default_cwd": true
+        },
+        {
+          "name": "service_sql",
+          "path": "D:\\phpstudy_pro\\WWW\\service_sql"
+        }
+      ]
+    },
+    {
+      "id": "ws_mrftrzwy",
+      "name": "新工作区",
+      "roots": [
+        {
+          "name": "service_fjdzky",
+          "path": "D:\\phpstudy_pro\\WWW\\service_fjdzky",
+          "default_cwd": true
+        }
+      ]
+    }
+  ]
+}

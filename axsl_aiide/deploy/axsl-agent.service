@@ -1,0 +1,44 @@
+# axsl-aiide Agent systemd unit
+#
+# 安装步骤:
+#   1) sudo cp deploy/axsl-agent.service /etc/systemd/system/
+#   2) 根据实际路径/用户修改下方 User/WorkingDirectory/ExecStart(重要!)
+#   3) sudo systemctl daemon-reload
+#   4) sudo systemctl enable --now axsl-agent
+#   5) sudo journalctl -u axsl-agent -f   # 查看日志
+#
+# 前置条件:
+#   - /opt/axsl_aiide/agent/.venv 已建好(执行过一次 scripts/start-agent.sh)
+#   - /opt/axsl_aiide/agent/.env 已配置好 OPENAI_API_KEY
+#   - 独立系统账号 axsl 已创建:  sudo useradd -r -s /usr/sbin/nologin axsl
+#   - 目录属主已改:  sudo chown -R axsl:axsl /opt/axsl_aiide
+
+[Unit]
+Description=axsl-aiide Agent (FastAPI on 127.0.0.1:8100)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=axsl
+Group=axsl
+WorkingDirectory=/opt/axsl_aiide/agent
+Environment="PATH=/opt/axsl_aiide/agent/.venv/bin:/usr/bin:/bin"
+# 如需 HuggingFace 镜像取消下一行注释
+# Environment="HF_ENDPOINT=https://hf-mirror.com"
+ExecStart=/opt/axsl_aiide/agent/.venv/bin/python /opt/axsl_aiide/agent/main.py
+Restart=on-failure
+RestartSec=3
+# stdout/stderr 自动进 journal
+StandardOutput=journal
+StandardError=journal
+
+# --- 安全加固(可按需开启,首次部署建议先注释掉调通后再加)---
+# NoNewPrivileges=true
+# ProtectSystem=strict
+# ProtectHome=true
+# PrivateTmp=true
+# ReadWritePaths=/opt/axsl_aiide/storage /opt/axsl_aiide/workspace
+
+[Install]
+WantedBy=multi-user.target
