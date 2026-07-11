@@ -2,6 +2,31 @@
 
 轻量编程 Agent。PHP 前端 + Python(FastAPI)Agent 内核 + OpenAI 兼容 LLM,可自主读写文件、执行 shell 命令、看错误自动修复。
 
+## 📸 界面预览
+
+<!--
+  截图请放到 docs/images/ 目录下,文件名保持一致即可自动生效。
+  命名与体积建议见 docs/images/README.md。
+-->
+
+<p align="center">
+  <img src="docs/images/main-ui.png" alt="axsl-aiide 主界面" width="820" />
+</p>
+
+<!-- 如果准备了浅色/深色两套截图,可以启用下面这段,GitHub 会根据用户主题自动切换:
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)"  srcset="docs/images/main-ui-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="docs/images/main-ui.png">
+    <img alt="axsl-aiide 主界面" src="docs/images/main-ui.png" width="820">
+  </picture>
+</p>
+-->
+
+| 计划面板 | 演示动图 |
+| :---: | :---: |
+| <img src="docs/images/plan-panel.png" alt="计划面板" width="400" /> | <img src="docs/images/demo.gif" alt="演示动图" width="400" /> |
+
 ## 运行环境要求
 
 本项目由三部分组成,按你实际用到的入口安装对应环境即可(**Agent 服务是核心,必装**;PHP 和 VSCode 扩展二选一或都装)。
